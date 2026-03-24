@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin', 
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -138,3 +138,90 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # config/settings.py
 AUTH_USER_MODEL = 'users.Utilisateur'
+
+# ==========================
+# Jazzmin Settings – Full Dark Mode + Icons
+# ==========================
+
+JAZZMIN_SETTINGS = {
+    # ─── Informations générales ───
+    "site_title": "Gestion Brevets",
+    "site_header": "Gestion Brevets",
+    "site_brand": "Brevets Sonatrach",
+    "site_logo": "images/logo-sonatrach.jpg",
+    
+    # ─── Thème & UI ───
+    "theme": "darkly",                  # Dark mode complet
+    "default_theme_mode": "dark",       # ⚡ Remplace dark_mode_theme déprécié
+    "show_ui_builder": False,           # Empêche modification UI via le builder
+    
+    # ─── Sidebar ───
+    "navigation_expanded": True,
+    "order_with_respect_to": [
+        "dashboard",
+        "brevets",
+        "inventeurs",
+        "deposants",
+        "documents",
+        "paiements",
+        "recours",
+        "notifications",
+        "users",
+        "auth",
+    ],
+    
+    # ─── Icons par app / modèle ───
+    "icons": {
+        # Users / Auth
+        "auth": "fas fa-users-cog",
+        "users.Utilisateur": "fas fa-user",
+        "users.Role": "fas fa-user-tag",
+        
+        # Brevets
+        "brevets": "fas fa-folder",
+        "brevets.Brevet": "fas fa-lightbulb",
+        "brevets.DemandeBrevet": "fas fa-file-alt",
+        
+        # Inventeurs & Déposants
+        "inventeurs.Inventeur": "fas fa-user-astronaut",
+        "deposants.Deposant": "fas fa-user-tie",
+        
+        # Documents
+        "documents": "fas fa-folder-open",
+        "documents.Document": "fas fa-file",
+        "documents.TypeDocument": "fas fa-file-medical",
+        
+        # Paiements
+        "paiements": "fas fa-credit-card",
+        "paiements.Paiement": "fas fa-money-bill-wave",
+        
+        # Notifications
+        "notifications": "fas fa-bell",
+        "notifications.Notification": "fas fa-bell",
+        
+        # Recours
+        "recours": "fas fa-balance-scale",
+        "recours.Recours": "fas fa-gavel",
+        
+        # Dashboard
+        "dashboard": "fas fa-chart-line",
+    }
+}
+
+# ─── UI Tweaks supplémentaires ───
+JAZZMIN_UI_TWEAKS = {
+    # Navbar
+    "navbar": "navbar-dark",
+    "brand_colour": "navbar-primary",
+    
+    # Accent color général
+    "accent": "accent-info",
+    
+    # Sidebar
+    "sidebar": "sidebar-dark-primary",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    
+    # Full dark mode bootstrap
+    "dark_mode_theme": "darkly",        # 🔹 support backward compatibility
+}

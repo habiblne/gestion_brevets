@@ -26,3 +26,9 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+from django.contrib import admin
+
+admin.site.site_header = "Gestion des Brevets"
+admin.site.site_title = "Admin Panel"
+admin.site.index_title = "Bienvenue"
