@@ -15,7 +15,13 @@ class Paiement(models.Model):
     # Relations basées sur le schéma relationnel [1]
     brevet = models.ForeignKey('brevets.Brevet', on_delete=models.CASCADE)
     utilisateur = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-
+    document = models.ForeignKey(
+    'documents.Documents', 
+    on_delete=models.SET_NULL, 
+    null=True, 
+    blank=True,
+    related_name='paiements'
+)
     class Meta:
         verbose_name = "Paiement"
         verbose_name_plural = "Paiements"

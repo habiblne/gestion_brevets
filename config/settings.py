@@ -147,7 +147,7 @@ JAZZMIN_SETTINGS = {
     # ─── Informations générales ───
     "site_title": "Gestion Brevets",
     "site_header": "Gestion Brevets",
-    "site_brand": "Brevets Sonatrach",
+    "site_brand": "Gestion Brevets",
     "site_logo": "images/logo-sonatrach.jpg",
     
     # ─── Thème & UI ───
