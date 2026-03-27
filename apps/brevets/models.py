@@ -18,7 +18,7 @@ class DemandeBrevet(models.Model):
     STATUT_CHOICES = [('valider', 'Valider'), ('non_valider', 'Non Valider')] # [1]
 
     id_demande = models.CharField(max_length=50, primary_key=True) # string dans [1]
-    titre = models.CharField(max_length=255)
+    titre = models.CharField(max_length=1000)
     nature = models.CharField(max_length=100)
     num_depot = models.IntegerField()
     date_depot = models.DateField()
